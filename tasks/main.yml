@@ -20,3 +20,9 @@
     - ezpublish
     - download
   when: ezpublish_download|bool
+
+- include: setup.yml
+  tags:
+    - ezpublish
+    - setup
+  when: ezpublish_setup|bool

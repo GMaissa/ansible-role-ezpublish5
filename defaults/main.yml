@@ -41,5 +41,11 @@ ezpublish_download: false
 # eZ Publish version to download
 ezpublish_version: v2014.11.1
 
+# Setup eZ Publish sources (install vendors, ...)
+ezpublish_setup: false
+
+# eZ Publish environment identifier during setup
+ezpublish_environment: prod
+
 # Additional packages
 ezpublish_additional_packages: []

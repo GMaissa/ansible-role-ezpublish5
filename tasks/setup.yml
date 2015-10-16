@@ -1,0 +1,33 @@
+---
+- name: Install eZ Publish dependencies
+  shell: export SYMFONY_ENV={{ ezpublish_environment }} && composer install --no-dev --prefer-dist -n
+  args:
+    chdir: "{{ ezpublish_apache_vhost.root }}"
+  register: ezpublish_dependencies_install
+  changed_when: ezpublish_dependencies_install.stdout.find('Nothing to install or update') == false
+
+- name: Dump legacy autoloads - kernel classes
+  shell: php ezpublish/console ezpublish:legacy:script bin/php/ezpgenerateautoloads.php --kernel
+  args:
+    chdir: "{{ ezpublish_apache_vhost.root }}"
+  changed_when: false
+
+- name: Dump legacy autoloads - kernel override classes
+  shell: php ezpublish/console ezpublish:legacy:script bin/php/ezpgenerateautoloads.php --kernel-override
+  args:
+    chdir: "{{ ezpublish_apache_vhost.root }}"
+  changed_when: false
+
+- name: Dump legacy autoloads - extensions classes
+  shell: php ezpublish/console ezpublish:legacy:script bin/php/ezpgenerateautoloads.php --extension
+  args:
+    chdir: "{{ ezpublish_apache_vhost.root }}"
+  changed_when: false
+
+- name: Dump eZ Publish assets on none prod environments
+  shell: php ezpublish/console assetic:dump --env={{ ezpublish_environment }} -n
+  args:
+    chdir: "{{ ezpublish_apache_vhost.root }}"
+  when: ezpublish_environment != 'prod'
+  changed_when: false
+
