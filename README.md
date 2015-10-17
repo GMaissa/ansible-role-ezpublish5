@@ -4,16 +4,14 @@ eZ Publish
 
 This Ansible role configures your environment for [eZ Publish](http://www.ez.no).
 
-See [gist](https://gist.github.com/GMaissa/653a5110a6b4a4200d27) for a setup example.
-
 
 Requirements
 ------------
 
-Depending on your role setup, you might need to setup Github token for composer. This can be done using the [kosssi.composer](https://galaxy.ansible.com/list#/roles/1119) role for instance.
+No external requirements exists for this role.
 
 
-Role variables
+Role Variables
 --------------
 
 To configure eZ Publish vhost file :
@@ -83,6 +81,18 @@ If you need to install additional system packages (ex: php5-memcached) :
 
     # Additional packages
     ezpublish_additional_packages: []
+
+
+Dependencies
+------------
+
+Depending on your role setup, you might need to setup Github token for composer. This can be done using the [kosssi.composer](https://galaxy.ansible.com/list#/roles/1119) role for instance.
+
+
+Example Playbook
+----------------
+
+See [gist](https://gist.github.com/GMaissa/653a5110a6b4a4200d27) for a setup example.
 
 
 License
