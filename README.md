@@ -1,8 +1,9 @@
 eZ Publish
 ==========
 [![Travis branch](https://img.shields.io/travis/GMaissa/ansible-role-ezpublish5/master.svg)](https://travis-ci.org/GMaissa/ansible-role-ezpublish5)
+[![Galaxy](http://img.shields.io/badge/galaxy-GMaissa.ezpublish5-blue.svg?style=flat)](https://galaxy.ansible.com/list#/roles/5620)
 
-This Ansible role configures your environment for [eZ Publish](http://www.ez.no).
+This Ansible role configures your environment for [eZ Publish](http://www.ez.no) CMS.
 
 
 Requirements
