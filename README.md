@@ -104,4 +104,4 @@ BSD
 Author Information
 ------------------
 
-Guillaume Maïssa <pro.g@maissa.fr>
+Guillaume Maissa <pro.g@maissa.fr>
