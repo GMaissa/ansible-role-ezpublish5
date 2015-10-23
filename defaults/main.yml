@@ -10,6 +10,9 @@ ezpublish_php_session_save_path: false
 # Define php timezone
 ezpublish_php_date_timezone: "Europe/Paris"
 
+# Define if Apache daemon should be started
+ezpublish_apache_started: true
+
 # Define Apache listen port
 ezpublish_apache_port: 80
 
@@ -49,3 +52,6 @@ ezpublish_environment: prod
 
 # Additional packages
 ezpublish_additional_packages: []
+
+# PECL extensions to install
+ezpublish_pecl_extensions: []
