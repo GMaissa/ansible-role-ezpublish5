@@ -30,7 +30,7 @@
            regexp='session.save_handler =.*'
            replace='session.save_handler={{ ezpublish_php_session_save_handler }}'
   with_items: php_config_files.stdout_lines
-  when: ezpublish_php_session_save_handler|bool
+  when: ezpublish_php_session_save_handler
   notify: Restart Apache
 
 - name: Set php session save path
@@ -38,7 +38,7 @@
            regexp=';session.save_path =.*'
            replace='session.save_path="{{ ezpublish_php_session_save_path }}"'
   with_items: php_config_files.stdout_lines
-  when: ezpublish_php_session_save_path|bool
+  when: ezpublish_php_session_save_path
   notify: Restart Apache
 
 - name: Find APC configuration file
